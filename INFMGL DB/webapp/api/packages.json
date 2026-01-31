@@ -1,0 +1,42 @@
+[
+    {
+        "package_id": 1,
+        "name": "Baguio City Tour",
+        "destination": "Baguio City",
+        "days": 3,
+        "price": 5000.00,
+        "description": "Explore the Summer Capital of the Philippines."
+    },
+    {
+        "package_id": 2,
+        "name": "Tagaytay Day Trip",
+        "destination": "Tagaytay",
+        "days": 1,
+        "price": 2000.00,
+        "description": "Scenic day trip to Tagaytay with Taal Volcano viewpoint."
+    },
+    {
+        "package_id": 3,
+        "name": "Palawan Adventure",
+        "destination": "Puerto Princesa",
+        "days": 5,
+        "price": 15000.00,
+        "description": "Underground River tour and island hopping."
+    },
+    {
+        "package_id": 4,
+        "name": "Boracay Beach Getaway",
+        "destination": "Boracay",
+        "days": 4,
+        "price": 12000.00,
+        "description": "White beach paradise with water activities."
+    },
+    {
+        "package_id": 5,
+        "name": "Cebu Heritage Tour",
+        "destination": "Cebu City",
+        "days": 3,
+        "price": 8000.00,
+        "description": "Historical tour and Oslob whale sharks."
+    }
+]

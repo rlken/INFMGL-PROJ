@@ -1,0 +1,36 @@
+/* Image Icon Styles */
+.logo-img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo-img-small {
+    height: 30px;
+    width: auto;
+    margin-right: 8px;
+}
+
+.service-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Update Service Card to handle images better */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* ... existing styles ... */
+}
+
+/* Adjustments for existing classes that might interfere */
+.logo-icon,
+.service-icon {
+    display: none;
+    /* Hide old classes if they linger */
+}

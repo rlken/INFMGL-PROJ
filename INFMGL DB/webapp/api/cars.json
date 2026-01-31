@@ -1,0 +1,92 @@
+[
+    {
+        "car_id": 1,
+        "brand": "Toyota",
+        "model": "Vios",
+        "plate_no": "ABC-1234",
+        "category": "Sedan",
+        "capacity": 5,
+        "rate_per_day": 1500.00
+    },
+    {
+        "car_id": 2,
+        "brand": "Honda",
+        "model": "City",
+        "plate_no": "DEF-5678",
+        "category": "Sedan",
+        "capacity": 5,
+        "rate_per_day": 1600.00
+    },
+    {
+        "car_id": 3,
+        "brand": "Toyota",
+        "model": "Innova",
+        "plate_no": "GHI-9012",
+        "category": "SUV",
+        "capacity": 8,
+        "rate_per_day": 2500.00
+    },
+    {
+        "car_id": 4,
+        "brand": "Mitsubishi",
+        "model": "Montero Sport",
+        "plate_no": "JKL-3456",
+        "category": "SUV",
+        "capacity": 7,
+        "rate_per_day": 3000.00
+    },
+    {
+        "car_id": 5,
+        "brand": "Toyota",
+        "model": "HiAce",
+        "plate_no": "MNO-7890",
+        "category": "Van",
+        "capacity": 15,
+        "rate_per_day": 3500.00
+    },
+    {
+        "car_id": 6,
+        "brand": "Nissan",
+        "model": "Urvan",
+        "plate_no": "PQR-1122",
+        "category": "Van",
+        "capacity": 18,
+        "rate_per_day": 4000.00
+    },
+    {
+        "car_id": 7,
+        "brand": "Honda",
+        "model": "Civic",
+        "plate_no": "STU-3344",
+        "category": "Sedan",
+        "capacity": 5,
+        "rate_per_day": 1800.00
+    },
+    {
+        "car_id": 8,
+        "brand": "Ford",
+        "model": "Everest",
+        "plate_no": "VWX-5566",
+        "category": "SUV",
+        "capacity": 7,
+        "rate_per_day": 3200.00
+    },
+    {
+        "car_id": 9,
+        "brand": "Toyota",
+        "model": "Fortuner",
+        "plate_no": "YZA-7788",
+        "category": "SUV",
+        "capacity": 7,
+        "rate_per_day": 3000.00
+    },
+    {
+        "car_id": 10,
+        "brand": "Suzuki",
+        "model": "Ertiga",
+        "plate_no": "BCD-9900",
+        "category": "MPV",
+        "capacity": 7,
+        "rate_per_day": 1800.00
+    }
+]
