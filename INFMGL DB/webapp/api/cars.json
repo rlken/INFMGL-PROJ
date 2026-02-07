@@ -88,5 +88,95 @@
         "category": "MPV",
         "capacity": 7,
         "rate_per_day": 1800.00
+    },
+    {
+        "car_id": 11,
+        "brand": "Hyundai",
+        "model": "Accent",
+        "plate_no": "EFG-1100",
+        "category": "Sedan",
+        "capacity": 5,
+        "rate_per_day": 1400.00
+    },
+    {
+        "car_id": 12,
+        "brand": "Kia",
+        "model": "Carnival",
+        "plate_no": "HIJ-2233",
+        "category": "Van",
+        "capacity": 11,
+        "rate_per_day": 4500.00
+    },
+    {
+        "car_id": 13,
+        "brand": "Mazda",
+        "model": "CX-5",
+        "plate_no": "KLM-4455",
+        "category": "SUV",
+        "capacity": 5,
+        "rate_per_day": 2800.00
+    },
+    {
+        "car_id": 14,
+        "brand": "Chevrolet",
+        "model": "Trailblazer",
+        "plate_no": "NOP-6677",
+        "category": "SUV",
+        "capacity": 7,
+        "rate_per_day": 3100.00
+    },
+    {
+        "car_id": 15,
+        "brand": "Toyota",
+        "model": "Wigo",
+        "plate_no": "QRS-8899",
+        "category": "Hatchback",
+        "capacity": 5,
+        "rate_per_day": 1200.00
+    },
+    {
+        "car_id": 16,
+        "brand": "Mitsubishi",
+        "model": "Xpander",
+        "plate_no": "TUV-0011",
+        "category": "MPV",
+        "capacity": 7,
+        "rate_per_day": 2200.00
+    },
+    {
+        "car_id": 17,
+        "brand": "Isuzu",
+        "model": "mu-X",
+        "plate_no": "WXY-2244",
+        "category": "SUV",
+        "capacity": 7,
+        "rate_per_day": 3100.00
+    },
+    {
+        "car_id": 18,
+        "brand": "Nissan",
+        "model": "Terra",
+        "plate_no": "ZAB-3366",
+        "category": "SUV",
+        "capacity": 7,
+        "rate_per_day": 3200.00
+    },
+    {
+        "car_id": 19,
+        "brand": "Toyota",
+        "model": "Rush",
+        "plate_no": "CDE-4488",
+        "category": "SUV",
+        "capacity": 7,
+        "rate_per_day": 2000.00
+    },
+    {
+        "car_id": 20,
+        "brand": "Honda",
+        "model": "BR-V",
+        "plate_no": "FGH-5500",
+        "category": "MPV",
+        "capacity": 7,
+        "rate_per_day": 2100.00
     }
 ]

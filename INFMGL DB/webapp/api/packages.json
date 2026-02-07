@@ -5,7 +5,7 @@
         "destination": "Baguio City",
         "days": 3,
         "price": 5000.00,
-        "description": "Explore the Summer Capital of the Philippines."
+        "description": "Explore the Summer Capital with Burnham Park, Mines View, and strawberry farms."
     },
     {
         "package_id": 2,
@@ -13,7 +13,7 @@
         "destination": "Tagaytay",
         "days": 1,
         "price": 2000.00,
-        "description": "Scenic day trip to Tagaytay with Taal Volcano viewpoint."
+        "description": "Scenic views of Taal Volcano, bulalo restaurants, and cool weather."
     },
     {
         "package_id": 3,
@@ -21,7 +21,7 @@
         "destination": "Puerto Princesa",
         "days": 5,
         "price": 15000.00,
-        "description": "Underground River tour and island hopping."
+        "description": "Underground River tour and island hopping in El Nido."
     },
     {
         "package_id": 4,
@@ -29,7 +29,7 @@
         "destination": "Boracay",
         "days": 4,
         "price": 12000.00,
-        "description": "White beach paradise with water activities."
+        "description": "White Beach paradise with water sports and nightlife."
     },
     {
         "package_id": 5,
@@ -37,6 +37,62 @@
         "destination": "Cebu City",
         "days": 3,
         "price": 8000.00,
-        "description": "Historical tour and Oslob whale sharks."
+        "description": "Magellan's Cross, Oslob whale sharks, and lechon feast."
+    },
+    {
+        "package_id": 6,
+        "name": "Siargao Surfing Trip",
+        "destination": "Siargao Island",
+        "days": 4,
+        "price": 10000.00,
+        "description": "Cloud 9 surfing, island hopping, and laid-back vibes."
+    },
+    {
+        "package_id": 7,
+        "name": "Vigan Heritage Walk",
+        "destination": "Vigan City",
+        "days": 2,
+        "price": 4500.00,
+        "description": "Spanish colonial architecture and Calle Crisologo experience."
+    },
+    {
+        "package_id": 8,
+        "name": "Bohol Countryside Tour",
+        "destination": "Bohol",
+        "days": 3,
+        "price": 7000.00,
+        "description": "Chocolate Hills, tarsiers, and Loboc River cruise."
+    },
+    {
+        "package_id": 9,
+        "name": "Batanes Scenic Tour",
+        "destination": "Batanes",
+        "days": 4,
+        "price": 18000.00,
+        "description": "Rolling hills, stone houses, and untouched natural beauty."
+    },
+    {
+        "package_id": 10,
+        "name": "La Union Beach Trip",
+        "destination": "La Union",
+        "days": 2,
+        "price": 3500.00,
+        "description": "Surfing lessons, beach bars, and sunset views."
+    },
+    {
+        "package_id": 11,
+        "name": "Davao City Escape",
+        "destination": "Davao City",
+        "days": 3,
+        "price": 6500.00,
+        "description": "Philippine Eagle Center, durian tasting, and Samal Island."
+    },
+    {
+        "package_id": 12,
+        "name": "Coron Island Hopping",
+        "destination": "Coron, Palawan",
+        "days": 4,
+        "price": 14000.00,
+        "description": "Crystal-clear lagoons, WWII shipwrecks, and pristine beaches."
     }
 ]

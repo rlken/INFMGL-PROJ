@@ -194,7 +194,7 @@
         // Load Available Cars from Server
         // ============================================
         function loadCars() {
-            fetch('api/cars.json') // FIXED: Use static JSON for stability
+            fetch('api/cars.json') // Demo Mode: Using static data for reliability
                 .then(response => response.json())
                 .then(data => {
                     carsData = data;
@@ -222,7 +222,7 @@
         // Load Tour Packages from Server
         // ============================================
         function loadPackages() {
-            fetch('api/packages.json') // FIXED: Use static JSON for stability
+            fetch('api/packages.json') // Demo Mode: Using static data for reliability
                 .then(response => response.json())
                 .then(data => {
                     packagesData = data;
@@ -359,7 +359,7 @@
         // Form Validation before Submit
         // ============================================
         document.getElementById('bookingForm').addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent actual submission
+            e.preventDefault(); // Demo Mode: Prevent actual submission
 
             const startDate = new Date(document.getElementById('startDate').value);
             const endDate = new Date(document.getElementById('endDate').value);
@@ -369,16 +369,19 @@
                 return false;
             }
 
-            // Simulate Network Request
+            // Demo Mode: Simulate processing
             const submitBtn = document.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = 'Processing...';
             submitBtn.disabled = true;
 
+            const carSelect = document.getElementById('carId');
+            const selectedCar = carSelect.options[carSelect.selectedIndex].text;
+            const totalCost = document.getElementById('totalCost').textContent;
+
             setTimeout(() => {
-                alert("Booking Successful! (Demo Mode)\n\nVehicle reserved: " + document.getElementById('carId').options[document.getElementById('carId').selectedIndex].text);
+                alert("✅ Booking Confirmed!\\n\\nVehicle: " + selectedCar + "\\nTotal: " + totalCost + "\\n\\n(Demo Mode - In production, this saves to MySQL database)");
                 window.location.href = 'index.html';
-            }, 1000);
+            }, 1500);
 
             return false;
         });

@@ -1,74 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
-                             http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-         version="4.0">
-    
-    <display-name>Car Rental Travel Agency</display-name>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+    version="6.0"
+    metadata-complete="false">
+
+    <display-name>Prince I&amp;L Car Rental</display-name>
     <description>
         Travel Agency Car Rental Booking System
         College Finals Project - INFMGL
     </description>
-    
+
     <!-- Welcome File (Default Page) -->
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
-    
-    <!-- ============================================ -->
-    <!-- Servlet Declarations -->
-    <!-- ============================================ -->
-    
-    <!-- Booking Servlet - Handles form submission -->
-    <servlet>
-        <servlet-name>BookingServlet</servlet-name>
-        <servlet-class>com.carrental.servlet.BookingServlet</servlet-class>
-    </servlet>
-    
-    <!-- Cars Servlet - Returns available cars as JSON -->
-    <servlet>
-        <servlet-name>CarsServlet</servlet-name>
-        <servlet-class>com.carrental.servlet.CarsServlet</servlet-class>
-    </servlet>
-    
-    <!-- Packages Servlet - Returns tour packages as JSON -->
-    <servlet>
-        <servlet-name>PackagesServlet</servlet-name>
-        <servlet-class>com.carrental.servlet.PackagesServlet</servlet-class>
-    </servlet>
-    
-    <!-- ============================================ -->
-    <!-- Servlet Mappings (URL Patterns) -->
-    <!-- ============================================ -->
-    
-    <servlet-mapping>
-        <servlet-name>BookingServlet</servlet-name>
-        <url-pattern>/api/booking</url-pattern>
-    </servlet-mapping>
-    
-    <servlet-mapping>
-        <servlet-name>CarsServlet</servlet-name>
-        <url-pattern>/api/cars</url-pattern>
-    </servlet-mapping>
-    
-    <servlet-mapping>
-        <servlet-name>PackagesServlet</servlet-name>
-        <url-pattern>/api/packages</url-pattern>
-    </servlet-mapping>
-    
-    <!-- ============================================ -->
-    <!-- Error Pages (Optional but recommended) -->
-    <!-- ============================================ -->
-    
+
+    <!-- Error Pages -->
     <error-page>
         <error-code>404</error-code>
         <location>/error.html</location>
     </error-page>
-    
+
     <error-page>
         <error-code>500</error-code>
         <location>/error.html</location>
     </error-page>
-    
+
 </web-app>
