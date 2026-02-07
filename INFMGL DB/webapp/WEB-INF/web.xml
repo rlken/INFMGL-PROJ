@@ -1,0 +1,68 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+    version="3.1"
+    metadata-complete="true">
+
+    <display-name>Prince I&amp;L Car Rental</display-name>
+    <description>
+        Travel Agency Car Rental Booking System
+        College Finals Project - INFMGL
+    </description>
+
+    <!-- Servlet Definitions -->
+    <servlet>
+        <servlet-name>CarsServlet</servlet-name>
+        <servlet-class>com.carrental.servlet.CarsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CarsServlet</servlet-name>
+        <url-pattern>/api/cars</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PackagesServlet</servlet-name>
+        <servlet-class>com.carrental.servlet.PackagesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PackagesServlet</servlet-name>
+        <url-pattern>/api/packages</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookingServlet</servlet-name>
+        <servlet-class>com.carrental.servlet.BookingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookingServlet</servlet-name>
+        <url-pattern>/api/booking</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>com.carrental.servlet.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/api/admin</url-pattern>
+    </servlet-mapping>
+
+    <!-- Welcome File (Default Page) -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <!-- Error Pages (Disabled for Debugging) -->
+    <!--
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.html</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.html</location>
+    </error-page>
+    -->
+
+</web-app>
