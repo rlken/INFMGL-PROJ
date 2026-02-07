@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your rental car online - Prince I&L Car Rental & Travel Agency">
+    <title>Book a Car - Prince I&L</title>
+    <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpg" alt="Prince I&L Logo" class="logo-img">
+                <span class="logo-text">Prince I&L</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="booking.html" class="active">Book Now</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Booking Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Book Your Rental Car</h1>
+            <p>Fill out the form below to reserve your vehicle</p>
+        </div>
+    </header>
+
+    <!-- Booking Form -->
+    <section class="section booking-section">
+        <div class="container">
+            <!-- Error Message Display -->
+            <div id="errorMessage" class="alert alert-error" style="display: none;"></div>
+
+            <form id="bookingForm" action="api/booking" method="POST" class="booking-form">
+                <!-- Customer Information -->
+                <div class="form-section">
+                    <h2><span class="section-number">1</span> Customer Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="customerName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="customerName" name="customerName" required
+                                placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact">Contact Number <span class="required">*</span></label>
+                            <input type="tel" id="contact" name="contact" required placeholder="e.g., 09171234567">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="nationality">Nationality</label>
+                            <input type="text" id="nationality" name="nationality" placeholder="e.g., Filipino"
+                                value="Filipino">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Selection -->
+                <div class="form-section">
+                    <h2><span class="section-number">2</span> Select Your Vehicle</h2>
+                    <div class="form-group full-width">
+                        <label for="carId">Choose a Car <span class="required">*</span></label>
+                        <select id="carId" name="carId" required>
+                            <option value="">-- Loading available cars... --</option>
+                        </select>
+                        <p class="form-hint" id="carDetails"></p>
+                    </div>
+                </div>
+
+                <!-- Tour Package (Optional) -->
+                <div class="form-section">
+                    <h2><span class="section-number">3</span> Tour Package (Optional)</h2>
+                    <div class="form-group full-width">
+                        <label for="packageId">Select a Package</label>
+                        <select id="packageId" name="packageId">
+                            <option value="">-- No tour package --</option>
+                        </select>
+                        <p class="form-hint" id="packageDetails"></p>
+                    </div>
+                </div>
+
+                <!-- Trip Details -->
+                <div class="form-section">
+                    <h2><span class="section-number">4</span> Trip Details</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="purpose">Purpose of Rental</label>
+                            <input type="text" id="purpose" name="purpose"
+                                placeholder="e.g., Family Vacation, Business Trip">
+                        </div>
+                        <div class="form-group">
+                            <label for="pickupLocation">Pickup Location <span class="required">*</span></label>
+                            <input type="text" id="pickupLocation" name="pickupLocation" required
+                                placeholder="e.g., NAIA Terminal 3">
+                        </div>
+                        <div class="form-group">
+                            <label for="dropoffLocation">Drop-off Location <span class="required">*</span></label>
+                            <input type="text" id="dropoffLocation" name="dropoffLocation" required
+                                placeholder="e.g., NAIA Terminal 3">
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate">Start Date <span class="required">*</span></label>
+                            <input type="date" id="startDate" name="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">End Date <span class="required">*</span></label>
+                            <input type="date" id="endDate" name="endDate" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cost Estimate -->
+                <div class="form-section cost-section">
+                    <h2><span class="section-number">5</span> Cost Estimate</h2>
+                    <div class="cost-breakdown">
+                        <div class="cost-row">
+                            <span>Car Rental:</span>
+                            <span id="carCost">₱0.00</span>
+                        </div>
+                        <div class="cost-row">
+                            <span>Tour Package:</span>
+                            <span id="packageCost">₱0.00</span>
+                        </div>
+                        <div class="cost-row">
+                            <span>Rental Days:</span>
+                            <span id="rentalDays">0 days</span>
+                        </div>
+                        <div class="cost-row total">
+                            <span>Estimated Total:</span>
+                            <span id="totalCost">₱0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <span class="btn-icon">📋</span>
+                        Submit Booking
+                    </button>
+                    <p class="form-note">
+                        <span class="required">*</span> Required fields.
+                        Your booking will be processed and confirmed shortly.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Prince I&L Car Rental & Travel Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================
+        // Global Variables
+        // ============================================
+        let carsData = [];
+        let packagesData = [];
+
+        // ============================================
+        // Initialize on Page Load
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function () {
+            loadCars();
+            loadPackages();
+            setMinDates();
+            checkForErrors();
+
+            // Add event listeners
+            document.getElementById('carId').addEventListener('change', updateCarDetails);
+            document.getElementById('packageId').addEventListener('change', updatePackageDetails);
+            document.getElementById('startDate').addEventListener('change', calculateCost);
+            document.getElementById('endDate').addEventListener('change', calculateCost);
+        });
+
+        // ============================================
+        // Load Available Cars from Server
+        // ============================================
+        function loadCars() {
+            fetch('api/cars.json') // Demo Mode: Using static data for reliability
+                .then(response => response.json())
+                .then(data => {
+                    carsData = data;
+                    const select = document.getElementById('carId');
+                    select.innerHTML = '<option value="">-- Select a car --</option>';
+
+                    data.forEach(car => {
+                        const option = document.createElement('option');
+                        option.value = car.car_id;
+                        option.textContent = `${car.brand} ${car.model} (${car.category}) - ₱${car.rate_per_day.toFixed(2)}/day`;
+                        option.dataset.rate = car.rate_per_day;
+                        option.dataset.capacity = car.capacity;
+                        option.dataset.plate = car.plate_no;
+                        select.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading cars:', error);
+                    document.getElementById('carId').innerHTML =
+                        '<option value="">Error loading cars. Please refresh.</option>';
+                });
+        }
+
+        // ============================================
+        // Load Tour Packages from Server
+        // ============================================
+        function loadPackages() {
+            fetch('api/packages.json') // Demo Mode: Using static data for reliability
+                .then(response => response.json())
+                .then(data => {
+                    packagesData = data;
+                    const select = document.getElementById('packageId');
+                    select.innerHTML = '<option value="">-- No tour package (Car rental only) --</option>';
+
+                    data.forEach(pkg => {
+                        const option = document.createElement('option');
+                        option.value = pkg.package_id;
+                        option.textContent = `${pkg.name} (${pkg.destination}) - ₱${pkg.price.toFixed(2)}`;
+                        option.dataset.price = pkg.price;
+                        option.dataset.days = pkg.days;
+                        option.dataset.description = pkg.description;
+                        select.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading packages:', error);
+                });
+        }
+
+        // ============================================
+        // Set Minimum Dates (Today)
+        // ============================================
+        function setMinDates() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('startDate').min = today;
+            document.getElementById('endDate').min = today;
+            document.getElementById('startDate').value = today;
+
+            // Set default end date to tomorrow
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            document.getElementById('endDate').value = tomorrow.toISOString().split('T')[0];
+        }
+
+        // ============================================
+        // Check for Error Messages in URL
+        // ============================================
+        function checkForErrors() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const error = urlParams.get('error');
+            if (error) {
+                const errorDiv = document.getElementById('errorMessage');
+                errorDiv.textContent = decodeURIComponent(error);
+                errorDiv.style.display = 'block';
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // ============================================
+        // Update Car Details Display
+        // ============================================
+        function updateCarDetails() {
+            const select = document.getElementById('carId');
+            const selected = select.options[select.selectedIndex];
+            const detailsDiv = document.getElementById('carDetails');
+
+            if (selected.value) {
+                detailsDiv.innerHTML = `
+                    <strong>Capacity:</strong> ${selected.dataset.capacity} passengers | 
+                    <strong>Plate No:</strong> ${selected.dataset.plate} |
+                    <strong>Rate:</strong> ₱${parseFloat(selected.dataset.rate).toFixed(2)}/day
+                `;
+            } else {
+                detailsDiv.innerHTML = '';
+            }
+
+            calculateCost();
+        }
+
+        // ============================================
+        // Update Package Details Display
+        // ============================================
+        function updatePackageDetails() {
+            const select = document.getElementById('packageId');
+            const selected = select.options[select.selectedIndex];
+            const detailsDiv = document.getElementById('packageDetails');
+
+            if (selected.value) {
+                detailsDiv.innerHTML = `
+                    <strong>Duration:</strong> ${selected.dataset.days} days | 
+                    <strong>Price:</strong> ₱${parseFloat(selected.dataset.price).toFixed(2)}<br>
+                    ${selected.dataset.description}
+                `;
+            } else {
+                detailsDiv.innerHTML = '';
+            }
+
+            calculateCost();
+        }
+
+        // ============================================
+        // Calculate Estimated Cost
+        // ============================================
+        function calculateCost() {
+            const carSelect = document.getElementById('carId');
+            const packageSelect = document.getElementById('packageId');
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+
+            let carCost = 0;
+            let packageCost = 0;
+            let days = 0;
+
+            // Calculate days
+            if (startDate && endDate) {
+                const start = new Date(startDate);
+                const end = new Date(endDate);
+                days = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+                if (days < 1) days = 1;
+            }
+
+            // Get car cost
+            const selectedCar = carSelect.options[carSelect.selectedIndex];
+            if (selectedCar.value && selectedCar.dataset.rate) {
+                carCost = parseFloat(selectedCar.dataset.rate) * days;
+            }
+
+            // Get package cost
+            const selectedPackage = packageSelect.options[packageSelect.selectedIndex];
+            if (selectedPackage.value && selectedPackage.dataset.price) {
+                packageCost = parseFloat(selectedPackage.dataset.price);
+            }
+
+            // Update display
+            document.getElementById('carCost').textContent = `₱${carCost.toFixed(2)}`;
+            document.getElementById('packageCost').textContent = `₱${packageCost.toFixed(2)}`;
+            document.getElementById('rentalDays').textContent = `${days} day${days !== 1 ? 's' : ''}`;
+            document.getElementById('totalCost').textContent = `₱${(carCost + packageCost).toFixed(2)}`;
+        }
+
+        // ============================================
+        // Form Validation before Submit
+        // ============================================
+        document.getElementById('bookingForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Demo Mode: Prevent actual submission
+
+            const startDate = new Date(document.getElementById('startDate').value);
+            const endDate = new Date(document.getElementById('endDate').value);
+
+            if (endDate < startDate) {
+                alert('End date must be on or after the start date.');
+                return false;
+            }
+
+            // Demo Mode: Simulate processing
+            const submitBtn = document.querySelector('button[type="submit"]');
+            submitBtn.innerHTML = 'Processing...';
+            submitBtn.disabled = true;
+
+            const carSelect = document.getElementById('carId');
+            const selectedCar = carSelect.options[carSelect.selectedIndex].text;
+            const totalCost = document.getElementById('totalCost').textContent;
+
+            setTimeout(() => {
+                alert("✅ Booking Confirmed!\\n\\nVehicle: " + selectedCar + "\\nTotal: " + totalCost + "\\n\\n(Demo Mode - In production, this saves to MySQL database)");
+                window.location.href = 'index.html';
+            }, 1500);
+
+            return false;
+        });
+    </script>
+</body>
+
+</html>
